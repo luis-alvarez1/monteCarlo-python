@@ -1,0 +1,60 @@
+ 
+ Starting GridMatch
+ Version 1.0.00 27 May 2008
+ Date 12/19/2019
+ Time 15:18:55
+ Initialization file -->gm_in.txt                                                                                                                                                                                                                                                      
+ -- LISTING OF INITIALIZATION FILE --
+ number of grid files to test                                                                                                                                                                                                                                   
+   5
+ rows,columns                                                                                                                                                                                                                                                   
+   1102  848
+ name of input files (text string, up to 255 characters per line; one file per line, list master grid first)                                                                                                                                                    
+ slope.txt                                                                                                                                                                                                                                                      
+ dem.txt                                                                                                                                                                                                                                                        
+ zones.txt                                                                                                                                                                                                                                                      
+ dir.txt                                                                                                                                                                                                                                                        
+ depth.txt                                                                                                                                                                                                                                                      
+ -- END INITIALIZATION DATA --
+ 
+ Reference grid,
+ slope.txt
+ contains   422380  data cells
+ contains   848  columns
+ contains   1102  rows
+ --------------------------------------------
+ 
+ Results for grid,
+ dem.txt                                                                                                                                                                                                                                                        
+ contains   422380  data cells
+ contains   848  columns
+ contains   1102  rows
+ Number of mismatches found:   0
+ --------------------------------------------
+ 
+ Results for grid,
+ zones.txt                                                                                                                                                                                                                                                      
+ contains   422380  data cells
+ contains   848  columns
+ contains   1102  rows
+ Number of mismatches found:   0
+ --------------------------------------------
+ 
+ Results for grid,
+ dir.txt                                                                                                                                                                                                                                                        
+ contains   422380  data cells
+ contains   848  columns
+ contains   1102  rows
+ Number of mismatches found:   0
+ --------------------------------------------
+ 
+ Results for grid,
+ depth.txt                                                                                                                                                                                                                                                      
+ contains   422380  data cells
+ contains   848  columns
+ contains   1102  rows
+ Number of mismatches found:   0
+ --------------------------------------------
+ GridMatch finished normally
+ Date 12/19/2019
+ Time 15:18:58

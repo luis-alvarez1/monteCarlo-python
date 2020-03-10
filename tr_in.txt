@@ -1,0 +1,93 @@
+Name of project (up to 255 characters)
+Envigado (Roberto J. Marin)
+imax, row, col, nwf, tx, nmax
+422380  1102  848  760873,  1,  300
+nzs, mmax, nper,  zmin,  uww,     t, zones
+10,    1000,   1,   0.001,  9.8e3,  14400,  8
+zmax,   depth,   rizero,  Min_Slope_Angle (degrees)
+-3.001,  -2.4,  8.6343707e-8,       0.
+zone, 1
+cohesion,phi,  uws,   diffus,   K-sat, Theta-sat,Theta-res,Alpha
+1.770001e+04	2.850001e+01	1.960001e+04	6.940001e-04	6.940001e-06	6.010001e-01	2.230001e-01	1.400001e+00
+zone, 2
+cohesion,phi,  uws,   diffus,   K-sat, Theta-sat,Theta-res,Alpha
+7.900001e+03	3.000001e+01	1.940001e+04	1.668001e-03	1.668001e-05	4.100001e-01	3.700001e-02	2.500001e+00
+zone, 3
+cohesion,phi,  uws,   diffus,   K-sat, Theta-sat,Theta-res,Alpha
+1.700001e+04	2.750001e+01	1.740001e+04	1.529001e-03	1.529001e-05	4.130001e-01	1.490001e-01	1.800001e+00
+zone, 4
+cohesion,phi,  uws,   diffus,   K-sat, Theta-sat,Theta-res,Alpha
+1.770001e+04	2.850001e+01	1.960001e+04	6.940001e-04	6.940001e-06	6.010001e-01	2.230001e-01	1.400001e+00
+zone, 5
+cohesion,phi,  uws,   diffus,   K-sat, Theta-sat,Theta-res,Alpha
+1.770001e+04	2.850001e+01	1.960001e+04	6.940001e-04	6.940001e-06	6.010001e-01	2.230001e-01	1.400001e+00
+zone, 6
+cohesion,phi,  uws,   diffus,   K-sat, Theta-sat,Theta-res,Alpha
+1.000001e+04	3.500001e+01	2.000001e+04	1.668002e-03	1.668002e-05	4.100002e-01	3.700002e-02	2.500002e+00
+zone, 7
+cohesion,phi,  uws,   diffus,   K-sat, Theta-sat,Theta-res,Alpha
+3.595001e+04	2.420001e+01	1.850001e+04	4.860001e-04	4.860001e-06	5.460001e-01	2.670001e-01	1.400002e+00
+zone, 8
+cohesion,phi,  uws,   diffus,   K-sat, Theta-sat,Theta-res,Alpha
+1.770001e+04	2.850001e+01	1.960001e+04	6.940001e-04	6.940001e-06	6.010001e-01	2.230001e-01	1.400001e+00
+cri(1), cri(2), ..., cri(nper)
+6.38889e-06
+capt(1), capt(2), ..., capt(n), capt(n+1)
+0, 14400
+File name of slope angle grid (slofil)  
+slope.txt
+File name of property zone grid (zonfil)
+zones.txt
+File name of depth grid (zfil) 
+zmax.txt
+File name of initial depth of water table grid   (depfil)
+depth.txt
+File name of initial infiltration rate grid   (rizerofil)
+none
+List of file name(s) of rainfall intensity for each period, (rifil())  
+none
+File name of grid of D8 runoff receptor cell numbers (nxtfil)
+output\TIdscelGrid_env.txt
+File name of list of defining runoff computation order (ndxfil)
+output\TIcelindxList_env.txt
+File name of list of all runoff receptor cells  (dscfil)
+output\TIdscelList_env.txt
+File name of list of runoff weighting factors  (wffil)
+output\TIwfactorList_env.txt
+Folder where output grid files will be stored  (folder)
+
+Identification code to be added to names of output files (suffix)
+env
+Save grid files of runoff? Enter T (.true.) or F (.false.)
+F
+Save grid of minimum factor of safety? Enter Enter T (.true.) or F (.false.)
+T
+Save grid of depth of minimum factor of safety? Enter Enter T (.true.) or F (.false.)
+F
+Save grid of pore pressure at depth of minimum factor of safety? Enter Enter T (.true.) or F (.false.)
+F
+Save grid files of actual infiltration rate? Enter T (.true.) or F (.false.)
+F
+Save grid files of unsaturated zone basal flux? Enter T (.true.) or F (.false.)
+F
+Save listing of pressure head and factor of safety ("flag")? (Enter -2 detailed, -1 normal, 0 none)
+0
+Number of times to save output grids
+2
+Times of output grids 
+0, 14400
+Skip other timesteps? Enter T (.true.) or F (.false.)
+F
+Use analytic solution for fillable porosity?  Enter T (.true.) or F (.false.)
+T
+Estimate positive pressure head in rising water table zone (i.e. in lower part of unsat zone)?  Enter T (.true.) or F (.false.)
+T
+Use psi0=-1/alpha? Enter T (.true.) or F (.false.) (False selects the default value, psi0=0)
+T
+Log mass balance results?   Enter T (.true.) or F (.false.)
+T
+Flow direction (enter "gener", "slope", or "hydro")
+gener
+Add steady background flux to transient infiltration rate to prevent drying beyond the initial conditions during periods of zero infiltration?
+T
+

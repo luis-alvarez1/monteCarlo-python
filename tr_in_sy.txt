@@ -1,0 +1,87 @@
+Name of project (up to 255 characters)
+one dimension test Srivastava and Yeh 
+imax,row,col,nwf,tx, nmax
+1,  1,  1,  10,  20, 100
+nzs, mmax, nper, zmin,   uww,  t,  zones
+40, -100,   1,   0.00, 9800, 40.,  1
+zmax, depth,  crizero, min_slope_angle (degrees)
+100.0,  100.0,    0.1   0.0
+zone, 1
+cohesion,phi,  uws,  diffus,  K-sat, Theta-sat,Theta-res,Alpha
+4000.,  33.6, 19000, 360., 1.0, .40,        0.06,   0.10
+cri(1),cri(2),...,cri(nper)
+0.9
+capt(1),capt(2),...,capt(n),capt(n+1)
+0.,40.
+slofil  (slope angle grid)
+data\sy91\slope.asc
+zonfil  (property zone grid)
+data\sy91\zone.asc
+zfil (depth)
+none
+depfil  (initial depth of water table)
+none
+rizerofil  (background infiltration rate)
+none
+rifil()  (rainfall intensity for each period, succeding periods listed on succeeding lines)
+none
+nxtfil  (grid of cell numbers receiving runoff from each cell)
+none
+ndxfil  (indexed list of cell numbers indicating correct order of computation for runoff routing)
+none
+dscfil  (list of downslope neighbor cells that receive runoff from each cell)
+none
+wffil   (list of weighting factors corresponding to list in dscfil)
+none
+folder   (folder where output grid files will be stored, file names are generated automatically)
+data\sy91\
+suffix  (name extension for grouping/identifying output files)
+syfig3
+Save grid files of runoff? Enter T (.true.) or F (.false.)
+F
+Save grid of minimum factor of safety? Enter Enter T (.true.) or F (.false.)
+F  
+Save grid of depth of minimum factor of safety? Enter Enter T (.true.) or F (.false.)
+F
+Save grid of pore pressure at depth of minimum factor of safety? Enter Enter T (.true.) or F (.false.)
+F
+Save grid files of actual infiltration rate? Enter T (.true.) or F (.false.)
+F
+Save grid files of unsaturated zone basal flux? Enter T (.true.) or F (.false.)
+F
+Save listing of pressure head and factor of safety (flag)? (Enter -2 detailed, -1 normal, 0 none)
+-2
+Number of times to save output grids
+4
+Times of output grids 
+0.,10.,20.,40.
+Skip other timesteps? Enter T (.true.) or F (.false.)
+F
+Use analytic solution for fillable porosity?  Enter T (.true.) or F (.false.)
+T
+Estimate positive pressure head in rising water table zone (i.e. in lower part of unsat zone)?  Enter T (.true.) or F (.false.)
+F
+Use psi0=-1/alpha? Enter T (.true.) or F (.false.) (False selects the default value, psi0=0)
+F
+Log mass balance results?   Enter T (.true.) or F (.false.)
+T
+Flow direction (enter "gener", "slope", or "hydro")
+gener
+Add steady background flux to transient infiltration rate to prevent drying beyond the initial conditions during periods of zero infiltration?
+F
+
+
+*******************************_Notes_********************************************
+File names can include path names up to 255 characters.  Edit the paths to match the
+the location of data on your PC.
+Imax is an integer defining the number of cells in the grid.
+The values of mmax,nper,nzs,zmin,t,capt,uww are constants.
+The values of cc,cphi,czmax,cuws,cri,crizero,cdep,cdif,cks may be specified as 
+constants if desired.  If a grid exists for c,phi,zmax,uws,ri,rizero,dep,dif,ks then 
+specify a negative value for cc,cphi,czmax,cuws,cri,crizero,cdep,cdif,cks.  Otherwise, 
+specify the desired constant value.  If flag=-1, TRIGRS will output depth 
+profile for each cell; if flag=-2, TRIGRS outputs a detailed depth profile.
+If mmax<=0, then the program will use the original Iverson 
+formulas for the pore pressure.  If n>=1, then the program will use our modified formulas.
+
+

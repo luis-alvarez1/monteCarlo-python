@@ -1,0 +1,206 @@
+#  Note:fed7c7c9 - This file not intended for hand editing.
+#  Absoft Developer Tools Interface requires use of this makefile.
+#  Use the Generate Makefile command to customize your own makefiles.
+#
+#  Absoft Corporation Compiler Interface Makefile(v4.0.1).
+#
+#
+#  Type 'amake -f "unitconvert.amk"' in this directory at the DOS prompt
+#  to execute this makefile. Type 'amake -f "unitconvert.amk" clean' to
+#  remove old *.obj, *.exe, and *.res files.
+#
+#
+#  This file was created by Absoft Developer Tools Interface.
+#  File created on: Tue May 27 16:32:00 2008
+#
+#
+
+
+
+#
+#  Variables and flags for the compiler(s) and linker.
+#
+F95COMPILER= f95
+F77COMPILER= f77
+C_COMPILER=  acc
+CPPCOMPILER= acc
+LINKER=      lnk
+
+F9x_FLAGS=   -YEXT_SFX=_ -c -nowdir -YEXT_SFX=_ -s -YEXT_NAMES=LCS 
+F77_FLAGS=   -c -f -N15 -s 
+FF95_FLAG=   
+F_DEFINES=   
+C_FLAGS=     
+CPP_FLAGS=   -c++
+C_DEFINES=   
+C_UNDEFS=    
+
+
+
+DFLT_LNK_FLG=-IGNOREDUPS -aliases:UNICODE.ALS 
+USER_LNK_FLG=-warn 
+LNK_FLAGS=   $(DFLT_LNK_FLG) $(USER_LNK_FLG)
+
+BASENAME=    unitconvert
+#
+#  Name of the executable.
+#
+TARGET=      unitconvert.exe
+OUTDIR=      .
+OBJDIR=      .\objs
+
+#
+#  Files for this executable.
+#
+F95FILES=    ".\unitconvert.f90" 
+MODFILES=    
+FFILES=      ".\srdgrd.f" ".\ssvgrd.f" 
+CFILES=      
+RCFILES=     
+RESFILES=    
+HFILES=      
+OBJS=        
+OTHERFILES=  
+MKFILE=      .\unitconvert.amk
+
+#
+#  Libraries for this executable.
+#
+USER_LIBS=   
+DFLT_LIBS=   unix.lib vms.lib absRT0.lib kernel32.lib fio.lib fmath.lib comdlg32.lib f90math.lib libac.lib 
+LIBS=        $(USER_LIBS) $(DFLT_LIBS)
+
+
+
+#
+#  Include directories specified for this executable.
+#
+INCS=        -I"." 
+LPATHS=      -path:"." 
+
+
+
+#
+#  Module flags, files and directories specified for this executable.
+#
+MOD_FLAGS=   
+MOD_INCS=    
+
+
+
+#  The following macro(s) and rule(s) are required for a full build
+#
+#  Rules and dependencies for the executable.
+#
+SRCFILES=    $(FFILES) $(F90FILES) $(CFILES) $(HFILES) $(RCFILES) $(RESFILES) $(OTHERFILES)
+RCRSFILES=   $(RESFILES) 
+
+OBJFILES=    $(OBJS) "$(OBJDIR)\unitconvert.obj" "$(OBJDIR)\srdgrd.obj" "$(OBJDIR)\ssvgrd.obj" 
+
+#
+#  Optional macros, rules and dependencies included from prebuild file.
+#
+
+
+#
+#  Default dependency for this makefile
+#
+default: "$(OUTDIR)\$(TARGET)"
+
+all: "$(OUTDIR)\$(TARGET)"
+
+
+"$(OUTDIR)\$(TARGET)": "$(OUTDIR)" "$(OBJDIR)" "$(MKFILE)" $(OBJFILES) $(RCRSFILES)\
+	$(USER_LIBS) $(MODFILES)
+	$(LINKER) $(LPATHS) $(OBJFILES) $(LNK_FLAGS) $(RCRSFILES) $(LIBS) \
+		-out:"$(OUTDIR)\$(TARGET)"
+#
+#  Optional commands, macros, rules and dependencies from postbuild file.
+#
+#  To append additional commands to the default target dependency 
+#  begin the first line of the postbuild file with a tab.
+#
+
+
+.rc.res:
+	$(RC) -fo $@ $(RCFLAGS) $<
+
+
+"$(OBJDIR)" :
+	if not exist "$(OBJDIR)\nul" mkdir "$(OBJDIR)"
+
+
+"$(OUTDIR)" :
+
+
+qclean: clean_exe clean_misc clean_plugins
+	erase "$(OBJDIR)\*.mod"
+	erase "$(OBJDIR)\*.res"
+	erase "$(OBJDIR)\*.lib"
+	erase "$(OBJDIR)\*.obj"
+
+cleanProjFiles: clean
+
+clean: clean_f95 clean_f77 clean_acc clean_target
+
+clean_misc:
+	erase "$(OBJDIR)\*.amh"
+	erase "$(OBJDIR)\*.bif"
+	erase "$(OBJDIR)\*.int"
+	erase "$(OUTDIR)\*.amh"
+	erase "$(OUTDIR)\*.bif"
+	erase "$(OUTDIR)\*.int"
+	erase "$(OUTDIR)\*.mds"
+
+clean_f95: clean_f95src clean_f95mods
+
+clean_target: clean_misc clean_plugins clean_rsrc clean_exe
+
+clean_exe:
+	erase "$(OUTDIR)\$(TARGET)"
+
+clean_rsrc:
+
+clean_f95src:
+	erase "$(OBJDIR)\unitconvert.obj"
+
+clean_f77:
+	erase "$(OBJDIR)\srdgrd.obj"
+	erase "$(OBJDIR)\ssvgrd.obj"
+
+clean_acc:
+
+clean_plugins:
+
+clean_f95mods:
+
+
+UNITCONVERT_F90_11 =   $(INCS) $(F9x_FLAGS) $(MOD_FLAGS) $(MOD_INCS) 
+"$(OBJDIR)\unitconvert.obj": ".\unitconvert.f90"
+	$(F95COMPILER) -o "$(OBJDIR)\unitconvert.obj" $(UNITCONVERT_F90_11)  ".\unitconvert.f90"
+
+
+SRDGRD_F_11 =   $(INCS) $(F77_FLAGS) $(F_DEFINES) 
+"$(OBJDIR)\srdgrd.obj": ".\srdgrd.f"
+	$(F77COMPILER) -o "$(OBJDIR)\srdgrd.obj" $(SRDGRD_F_11)  ".\srdgrd.f"
+
+
+SSVGRD_F_11 =   $(INCS) $(F77_FLAGS) $(F_DEFINES) 
+"$(OBJDIR)\ssvgrd.obj": ".\ssvgrd.f"
+	$(F77COMPILER) -o "$(OBJDIR)\ssvgrd.obj" $(SSVGRD_F_11)  ".\ssvgrd.f"
+
+
+
+
+#
+#  Include any scanned dependencies
+#
+include "$(OUTDIR)\mkdep\mkdep_$(BASENAME).amk"
+
+
+#
+#  Define necessary macros for dependency scanning.
+#
+MKDEP=       makedepend
+MKDEP_FLAGS= -quiet "-pre$(OBJDIR)\\" -Y -modInfo -errdel 
+

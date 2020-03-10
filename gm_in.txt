@@ -1,0 +1,13 @@
+number of grid files to test
+5
+rows,columns
+1102, 848
+name of input files (text string, up to 255 characters per line; one file per line, list master grid first)
+slope.txt
+dem.txt
+zones.txt
+dir.txt
+depth.txt
+
+
+*** Note, Flow-direction grids need additional processing beyond the capabilities of GridMatch.
